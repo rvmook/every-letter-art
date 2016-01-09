@@ -14,7 +14,7 @@ module.exports = function(taskName) {
 
 			browserSync.init({
 				server: {
-					baseDir: "./dist"
+					baseDir: './dist'
 				}
 			});
 			args.push('watch');
