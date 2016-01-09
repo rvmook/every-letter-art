@@ -1,0 +1,36 @@
+{
+  "name": "project-pangram",
+  "version": "0.0.0",
+  "description": "Gulp dependencies for Project Pangram development",
+  "repository": "https://github.com/rvmook/project-pangram",
+  "license": "MIT",
+  "author": {
+    "name": "Rick van Mook",
+    "email": "rick@rvmook.com",
+    "url": "http://rvmook.com/"
+  },
+  "devDependencies": {
+    "brfs": "^1.4.1",
+    "browser-sync": "^2.10.0",
+    "browserify": "^12.0.1",
+    "del": "^2.1.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-if": "^2.0.0",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "lodash": "^3.10.1",
+    "run-sequence": "^1.1.5",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.6.1",
+    "yargs": "^3.31.0"
+  }
+}
