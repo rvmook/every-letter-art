@@ -204,3 +204,65 @@ footer {
 	display: inline-block;
 	margin-right: 20px;
 }
+
+.menu {
+
+	position: fixed;
+	height: 100%;
+	top: 0;
+	right: -77px;
+	z-index: 1;
+	width: 90px;
+	background-color: #202020;
+
+
+	transition: 350ms all;
+
+
+	list-style: none;
+	margin: 0;
+
+	&:before {
+
+		content: "";
+		width: 80px;
+		height: 80px;
+		display: block;
+		background-color: #202020;
+		position: absolute;
+		top: 50%;
+		border-radius: 40px;
+		margin-top: -40px;
+		margin-left: -25px;
+	}
+
+	&:hover {
+
+		right: 0;
+	}
+
+	li {
+
+		position: relative;
+		z-index: 2;
+		color: #fff;
+		font-size: 25px;
+		line-height: 2;
+		width: 50%;
+		text-align: center;
+
+		float: left;
+	}
+}
+
+.menu-wrapper {
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	padding: 10px;
+	overflow-y: scroll;
+	box-sizing: border-box;
+}
