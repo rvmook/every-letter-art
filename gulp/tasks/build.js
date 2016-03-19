@@ -6,21 +6,26 @@ module.exports = function(taskName) {
 
 	gulp.task(taskName, ['clean'], function (cb) {
 
-		cb = cb || function () {};
+		cb = cb || function (e) {
+		};
 
-		var args = ['styles', 'html', 'browserify', 'copyStaticAssets', 'copyScripts'];
+		var args = ['styles', 'handlebars', 'browserify', 'copyAssets'];
 
 		if (!global.isProd) {
 
 			browserSync.init({
 				server: {
-					baseDir: './dist'
+					baseDir: "./dist"
 				}
 			});
 			args.push('watch');
+
+		} else {
+
+			args.push('rev');
 		}
 
-		args.push('eslint', cb);
+		args.push(cb);
 
 		return runSequence.apply(this, args);
 	});

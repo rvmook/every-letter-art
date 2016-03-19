@@ -1,0 +1,76 @@
+{
+	"art": {
+		"a": {
+			"name": "CBAlpha",
+			"sentence": "The Quick Brown Fox Jumped Over The Lazy Dog",
+			"people": {
+				"copy": {
+					"name": "Anna",
+					"thumb": "",
+					"links": [
+						{
+							"label": "Twitter",
+							"url": "https://twitter.com/"
+						},
+						{
+							"label": "Blog",
+							"url": "http://heyimanna.com/"
+						}
+					],
+					"questions": [
+						{
+							"question": "Lorem Ipsum?",
+							"answer": "Dolor Sit Amet"
+						}
+					]
+				},
+				"art": {
+					"name": "Saya",
+					"thumb": "",
+					"links": [
+						{
+							"label": "Twitter",
+							"url": "https://twitter.com/"
+						},
+						{
+							"label": "Blog",
+							"url": "http://heyimanna.com/"
+						}
+					],
+					"questions": [
+						{
+							"question": "Lorem Ipsum?",
+							"answer": "Dolor Sit Amet"
+						}
+					]
+				},
+				"motion": {
+					"name": "Rick",
+					"thumb": "",
+					"links": [
+						{
+							"label": "Twitter",
+							"url": "https://twitter.com/"
+						},
+						{
+							"label": "Blog",
+							"url": "http://heyimanna.com/"
+						}
+					],
+					"questions": [
+						{
+							"question": "Lorem Ipsum?",
+							"answer": "Dolor Sit Amet"
+						}
+					]
+				}
+			}
+		},
+		"b": {
+			"name": "Beta"
+		},
+		"c": {
+			"name": "Gamma"
+		}
+	}
+}

@@ -40,7 +40,7 @@ function buildScript(file) {
 
 	function rebundle() {
 		var stream = bundler.bundle();
-		var createSourcemap = global.isProd && config.browserify.sourcemap;
+		var createSourcemap = !global.isProd && config.browserify.sourcemap;
 
 		gutil.log('Rebundle Browserify' + config.browserify.dest);
 

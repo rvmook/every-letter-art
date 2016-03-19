@@ -5,34 +5,33 @@ var	styles = {
 	browserify = {
 		entries: ['./src/assets/scripts/main.js'],
 		bundleName: 'main.js',
-		dest: 'dist/assets/scripts',
-		sourcemap: true
+		dest: 'dist/assets/scripts'
 	},
-	esLintFiles = ['./gulp/**/*.js', './src/assets/scripts/**/*.js', '!./src/assets/scripts/libs/**/*.js'],
+	handlebars = {
+		dataRequire:'../../src/data.json',
+		partials:['./src/handlebars/partials'],
+		src:['src/handlebars/*.hbs', 'src/handlebars/**/*.hbs', '!src/handlebars/partials/*.hbs', '!src/handlebars/art/*.hbs'],
+		artSrc:['src/handlebars/art/index.hbs', 'src/handlebars/art/info.hbs'],
+		dist:'dist',
+		watch:['src/handlebars/*.hbs', 'src/handlebars/*/**.hbs', 'src/data.json'],
+		rename:function(path) {
+			path.extname = '.html';
+		},
+		minifyHTML: {
+			removeComments:true,
+			removeTagWhitespace:true,
+			collapseWhitespace:true,
+			removeOptionalTags:true,
+			minifyJS:true
+		}
+	},
 	uglify = {
 		preserveComments: 'some',
 		compress: {
-			drop_console: true //eslint-disable-line camelcase
+			drop_console: true
 		}
 	},
-	html = {
-		src: ['./src/**/*.html'],
-		dest: './dist',
-		options: {
-			removeOptionalTags:true,
-			removeEmptyAttributes:true,
-			removeScriptTypeAttributes:true,
-			removeStyleLinkTypeAttributes:true,
-			useShortDoctype:true,
-			removeRedundantAttributes:true,
-			removeAttributeQuotes:true,
-			removeComments:true,
-			minifyCSS:true,
-			collapseWhitespace:true,
-			maxLineLength:120
-		}
-	},
-	copyStaticAssets = {
+	copyAssets = {
 		src:[
 			'src/assets/**',
 			'!src/assets/scripts/**',
@@ -40,19 +39,11 @@ var	styles = {
 		],
 		dest:'dist/assets/'
 	},
-	copyScripts = {
-		src: [
-			'src/assets/scripts/libs/**.js'
-		],
-		dest: './dist/assets/scripts/libs'
-	},
 	clean = ['dist/**'];
 
 exports.clean = clean;
-exports.html = html;
+exports.handlebars = handlebars;
 exports.styles = styles;
-exports.esLintFiles = esLintFiles;
-exports.copyScripts = copyScripts;
-exports.copyStaticAssets = copyStaticAssets;
+exports.copyAssets = copyAssets;
 exports.browserify = browserify;
 exports.uglify = uglify;

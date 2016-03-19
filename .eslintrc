@@ -6,10 +6,7 @@
     "node": 1,
     "browser": 1
   },
-  "globals": {
-    "TweenLite": true,
-    "Cubic": true
-  },
+  "globals": {},
   "rules": {
 
     /* Possible Errors */
@@ -102,7 +99,7 @@
     "no-with": 0, // disallow use of the with statement
     "radix": 0, // require use of the second argument for parseInt()
     "vars-on-top": 0, // require declaration of all vars at the top of their containing scope
-    "wrap-iife": [2, "outside"], // require immediate function invocation to be wrapped in parentheses
+    "wrap-iife": [2, "inside"], // require immediate function invocation to be wrapped in parentheses
     "yoda": 1, // require or disallow Yoda conditions
 
 
@@ -136,13 +133,13 @@
     "func-style": 0, // enforce use of function declarations or expressions
     "id-length": 0, // this option enforces minimum and maximum identifier lengths (variable names, property names etc.)
     "id-match": 0, // require identifiers to match the provided regular expression
-    "indent": [01, "tab"], // specify tab or space width for your code (fixable)
-    "jsx-quotes": [1, "prefer-double"], // specify whether double or single quotes should be used in JSX attributes
+    "indent": [0, "tab"], // specify tab or space width for your code (fixable)
+    "jsx-quotes": [0, "prefer-double"], // specify whether double or single quotes should be used in JSX attributes
     "key-spacing": 0, // enforce spacing between keys and values in object literal properties
     "linebreak-style": [0, "unix"],  // disallow mixed 'LF' and 'CRLF' as linebreaks
     "lines-around-comment": 0, // enforce empty lines around comments
     "max-depth": [0, 4], // specify the maximum depth that blocks can be nested
-    "max-len": [1, 120, 4, {"ignoreComments": true, "ignoreUrls": true}], // specify the maximum length of a line in your program
+    "max-len": [0, 80, 4], // specify the maximum length of a line in your program
     "max-nested-callbacks": [0, 2], // specify the maximum depth callbacks can be nested
     "max-params": [1, 6], // limits the number of parameters that can be used in the function declaration.
     "max-statements": [0, 10], // specify the maximum number of statement allowed in a function
@@ -172,10 +169,10 @@
     "operator-linebreak": 0, // enforce operators to be placed before or after line breaks
     "padded-blocks": 0, // enforce padding within blocks
     "quote-props": 0, // require quotes around object literal property names
-    "quotes": [1, "single"], // specify whether backticks, double or single quotes should be used (fixable)
+    "quotes": [0, "single"], // specify whether backticks, double or single quotes should be used (fixable)
     "require-jsdoc": 0, // Require JSDoc comment
     "semi": 0, // require or disallow use of semicolons instead of ASI (fixable)
-    "semi-spacing": [1, {"before": false, "after": true}], // enforce spacing before and after semicolons
+    "semi-spacing": [0, {"before": false, "after": true}], // enforce spacing before and after semicolons
     "sort-vars": 0, // sort variables within the same declaration block
     "space-after-keywords": [0, "always"], // require a space after certain keywords (fixable)
     "space-before-keywords": [0, "always"], // require a space before certain keywords (fixable)
