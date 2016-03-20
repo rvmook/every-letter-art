@@ -44,6 +44,7 @@ module.exports = function(taskName) {
 				return;
 			}
 
+			templateData.id = id;
 			templateData.isProd = global.isProd;
 
 			return handlebarsSequence(
