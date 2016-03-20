@@ -26,7 +26,7 @@ module.exports = function(taskName) {
 				outputStyle: global.isProd ? 'compressed' : 'expanded'
 			}))
 			.on('error', handleErrors)
-			.pipe(autoprefixer('last 2 versions', '> 1%', 'ie >= 9'))
+			.pipe(autoprefixer('last 2 versions', '> 1%', 'ie >= 10'))
 			.on('error', handleErrors)
 			.pipe(gulpif(!global.isProd, sourcemaps.write(sourceMapTarget)))
 			.pipe(gulp.dest(config.styles.dest))

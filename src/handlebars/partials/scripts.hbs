@@ -1,16 +1,16 @@
 {{#unless isProd}}
-	<script src="assets/scripts/main.js"></script>
+	<script src='/assets/scripts/main.js'></script>
 {{else}}
 	<script>
 
 		(function(){
 			var win = window,
 					hasLocalStorage = 'localStorage' in win && win['localStorage'] !== null,
-					jsFile = "assets/scripts/main.js",
+					jsFile = '/assets/scripts/main.js',
 					JS_FILE = 'JS_FILE',
 					JS_DATA = 'JS_DATA',
 
-					cssFile = "assets/styles/main.css",
+					cssFile = '/assets/styles/main.css',
 					CSS_FILE = 'CSS_FILE',
 					CSS_DATA = 'CSS_DATA';
 
@@ -61,7 +61,7 @@
 
 			function loadUrl(url, callback) {
 				var request = new XMLHttpRequest();
-				request.open("GET", url, true);
+				request.open('GET', url, true);
 				request.onreadystatechange = function () {
 
 					if (request.readyState != 4 || request.status != 200) {

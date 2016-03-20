@@ -33,10 +33,7 @@ module.exports = function(taskName) {
 			// deleting the require cache to make sure we get the latest json if it's updated
 			delete require.cache[require.resolve(config.handlebars.dataRequire)];
 
-			var templateData = require(config.handlebars.dataRequire).art[id],
-				options = {
-				batch : config.handlebars.partials
-			};
+			var templateData = require(config.handlebars.dataRequire).art[id];
 
 			if(!templateData) {
 
@@ -49,9 +46,10 @@ module.exports = function(taskName) {
 
 			templateData.isProd = global.isProd;
 
-			return gulp.src(config.handlebars.artSrc)
-				.pipe(handlebars(templateData, options))
-				.pipe(rename(function(path){
+			return handlebarsSequence(
+				config.handlebars.artSrc,
+				templateData,
+				function(path){
 
 					var basename = id + '/';
 
@@ -64,10 +62,8 @@ module.exports = function(taskName) {
 
 					path.basename = basename;
 					path.extname = '.html';
-				}))
-				.pipe(gulpif(global.isProd, minifyHTML(config.handlebars.minifyHTML)))
-				.pipe(gulp.dest(config.handlebars.dist))
-				.pipe(gulpif(!global.isProd, browserSync.stream()));
+				}
+			);
 		}
 	}
 
@@ -83,14 +79,27 @@ module.exports = function(taskName) {
 
 		templateData.isProd = global.isProd;
 
-		return gulp.src(config.handlebars.src)
-			.pipe(handlebars(templateData, options))
-			.on('error', handleErrors)
-			.pipe(rename(config.handlebars.rename))
-			.pipe(gulpif(global.isProd, minifyHTML(config.handlebars.minifyHTML)))
-			.pipe(gulp.dest(config.handlebars.dist))
-			.pipe(gulpif(!global.isProd, browserSync.stream()));
+		return handlebarsSequence(
+			config.handlebars.src,
+			templateData,
+			config.handlebars.rename
+		);
 	});
 };
+
+function handlebarsSequence(src, templateData, renamer) {
+
+	var options = {
+		batch : config.handlebars.partials
+	};
+
+	return gulp.src(src)
+		.pipe(handlebars(templateData, options))
+		.on('error', handleErrors)
+		.pipe(rename(renamer))
+		.pipe(gulpif(global.isProd, minifyHTML(config.handlebars.minifyHTML)))
+		.pipe(gulp.dest(config.handlebars.dist))
+		.pipe(gulpif(!global.isProd, browserSync.stream()));
+}
 
 
