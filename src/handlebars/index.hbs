@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-{{> htmlHead }}
-<body>
-{{> scripts }}
-</body>
-</html>
+{{#> layout }}
+	<ul>
+		{{#each art}}
+			<li>{{@key}} - <a href="/{{@key}}/">See the artwork</a></li>
+		{{/each}}
+	</ul>
+{{/layout}}

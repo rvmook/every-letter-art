@@ -11,7 +11,7 @@ var	styles = {
 		dataRequire:'../../src/data.json',
 		partials:['./src/handlebars/partials'],
 		src:['src/handlebars/*.hbs', 'src/handlebars/**/*.hbs', '!src/handlebars/partials/*.hbs', '!src/handlebars/art/*.hbs'],
-		artSrc:['src/handlebars/art/index.hbs', 'src/handlebars/art/info.hbs'],
+		artSrc:['src/handlebars/art/*.hbs'],
 		dist:'dist',
 		watch:['src/handlebars/*.hbs', 'src/handlebars/*/**.hbs', 'src/data.json'],
 		rename:function(path) {
