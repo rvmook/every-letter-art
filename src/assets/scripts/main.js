@@ -1,5 +1,6 @@
 require('./libs/greensock/EasePack');
 require('./libs/greensock/TweenLite');
+var Q = require('./libs/kew');
 
 var ajaxRequest = require('./utils/ajaxRequest');
 
@@ -8,13 +9,15 @@ var _doc = document,
 	_contentEl,
 	_allLinkEls;
 
-
 _win.addEventListener('popstate', onPopState);
 _contentEl = getContentEl(_doc);
 setupPage();
 
 function setupPage() {
 
+
+	_doc.body.classList.add('is-visible');
+	_contentEl.classList.add('is-visible');
 
 	_allLinkEls = _doc.querySelectorAll('a');
 
@@ -26,12 +29,17 @@ function setupPage() {
 
 function disposePage() {
 
+
+	_contentEl.classList.remove('is-visible');
+
 	for(var i = 0; i < _allLinkEls.length; i++) {
 
 		_allLinkEls[i].removeEventListener('click', onLinkClick);
 	}
 
 	_allLinkEls = null;
+
+	return Q.delay(450);
 }
 
 function onLinkClick(e) {
@@ -68,11 +76,14 @@ function internalLoad(url) {
 			parsedContent = getContentEl(parserEl).innerHTML;
 
 
-			disposePage();
+			disposePage()
+				.then(function(){
 
-			_contentEl.innerHTML = parsedContent;
+					_contentEl.innerHTML = parsedContent;
 
-			setupPage();
+					setupPage();
+				});
+
 		});
 }
 
