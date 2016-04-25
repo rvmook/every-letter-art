@@ -1,6 +1,7 @@
 require('./libs/greensock/EasePack');
 require('./libs/greensock/TweenLite');
 var Q = require('./libs/kew');
+require('./modules/list');
 
 var ajaxRequest = require('./utils/ajaxRequest');
 
@@ -47,12 +48,15 @@ function onLinkClick(e) {
 	var el = this,
 		url = el.getAttribute('href');
 
-	if(!validateExternalUrl(url) && url !== window.location.pathname) {
+	if(!validateExternalUrl(url)) {
 
 		e.preventDefault();
 
-		pushState(url);
-		internalLoad(url);
+		if(url !== window.location.pathname) {
+
+			pushState(url);
+			internalLoad(url);
+		}
 	}
 }
 

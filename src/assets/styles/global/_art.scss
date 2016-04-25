@@ -1,0 +1,57 @@
+.art {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	height: 100%;
+
+	//@media screen and (max-aspect-ratio: 12/9) {
+	//
+	//	display: block;
+	//}
+}
+
+.art__controls {
+
+	width: 300px;
+	background: green;
+	order: 1;
+	align-self: flex-end;
+}
+
+.art__credits {
+
+
+	width: 300px;
+	background: yellow;
+	order:3;
+	align-self: flex-end;
+}
+
+.art__canvas {
+
+	display: block;
+	background-color: red;
+	flex-grow: 1;
+	order: 2;
+}
+.art__canvas {
+
+	//width: 100%;
+	//height: auto;
+	//background: blue;
+
+	//@media screen and (max-aspect-ratio: 16/9) {
+	//
+	//	max-height: 80%;
+	//}
+	//
+	//@media screen and (max-aspect-ratio: 12/9) {
+	//
+	//	width: 100%;
+	//	max-width: 768px;
+	//	max-height: none;
+	//	height: auto;
+	//	background-color: blue;
+	//}
+
+}
