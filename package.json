@@ -2,7 +2,10 @@
   "name": "every-letter-art",
   "version": "0.0.1",
   "description": "Gulp dependencies for Every Letter Art development",
-  "repository": "https://github.com/rvmook/every-letter-art",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/rvmook/every-letter-art"
+  },
   "license": "MIT",
   "author": {
     "name": "Rick van Mook",
@@ -29,7 +32,6 @@
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.7",
     "lodash": "^3.10.1",
-    "pixi-svg-graphics": "0.0.2",
     "run-sequence": "^1.1.5",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
